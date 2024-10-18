@@ -20,7 +20,7 @@ mongoose.connect(mongoURI, {useNewUrlParser:true}).then(() => {
     console.log("DB connection fail", err)
 })
 
-app.listen(5002, ()=>{      //5002 Atlas, 5001 Local 
+app.listen(process.env.PORT || 5002, ()=>{      // 5002(with Atlas DB, local), 5001(local DB, local), 
     console.log("server on 5002")
 })
 
