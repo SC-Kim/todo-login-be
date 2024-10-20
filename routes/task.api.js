@@ -1,8 +1,9 @@
 const express = require('express')
 const taskController = require('../controller/task.controller')
 const router = express.Router()
+const authController = require("../controller/auth.contoller")
 
-router.post('/', taskController.createTask)
+router.post('/', authController.authenticate, taskController.createTask)
 
 router.get('/', taskController.getTask)
 
